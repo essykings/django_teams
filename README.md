@@ -19,5 +19,9 @@ Django Teams is a project management application where user can manage projects 
 1. Run the Django development server:
 
 
+## Contributing
+If you wish to contribute, find any issues, or have suggestions for improvements, please create a pull request.
 
+## License
+This project is licensed under the [MIT License](LICENSE).
    
