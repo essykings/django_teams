@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container  bg-light ">
+     <div class="container py-5 h-100">
+       <div class="row d-flex justify-content-center align-items-center h-500">
+          <div class="col-md-12 col-xl-10">
+             <div class="card mask-custom">
+               <div class="card-body p-4 ">
+                   <div class="row">
+                      <h5 class="border-0 align-left">
+                         {{ project.name }}
+                      </h5>
+                   </div>
+                </div>
+             </div>
+             <div class="card mask-custom">
+               <div class="card-body p-4 ">
+                   <div class="row">
+                      <p class="border-0 align-left">
+                       {{ project.description }}
+                      </p>
+                   </div>
+                </div>
+             </div>
+             <div class="card mask-custom">
+               <div class="card-body p-4 ">
+                   <div class="row">             
+                      <table class="table">
+                       <thead>
+                         <tr>
+                           <th>Task</th>
+                           <th>Assignee</th>
+                           <th>due_date</th>
+                         </tr>
+                       </thead>
+                       {% for task in project_tasks %}
+                       <tbody>
+                         <tr>
+                           <td>{{ task.title }}</td>
+                           <td>{{ task.assignee }}</td>
+                           <td>{{ task.due_date }}</td>
+                         </tr>
+                        
+                       </tbody>
+                       {% endfor%}
+                     </table>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+
+
+{% endblock content %}

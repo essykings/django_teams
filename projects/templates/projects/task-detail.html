@@ -1,0 +1,35 @@
+<!-- task-detail.html -->
+
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+
+ <div class="container ">
+    <div class="row ">
+       <div class="col-md-12 ">
+             <div class="jumbotron">
+               <h4 class="display-4">{{task.title}}</h4>
+               <p class="lead">{{task.description}}</p>
+               <hr class="my-4">
+               <p>Date Created:  {{task.date_created}}</p>
+              
+               {% if task.assignee != request.user%}
+               <a class="btn btn-primary btn-lg" href="{% url 'join-task' task.id%}" role="button">Join Task</a>
+          
+               {% endif %}
+               <!-- <a class="btn btn-primary btn-lg" href="{% url 'delete-task' task.id%}" role="button">Delete Task</a> -->
+
+             </div>
+       </div>
+    </div>
+ </div>
+
+
+
+
+{% endblock content %}

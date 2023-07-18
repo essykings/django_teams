@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'projects'%}">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'projects'%}">Projects </a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'tasks'%}">Tasks</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link btn btn-primary" href="{% url 'create-task'%}">Create Task</a>
+            </li>
+            <br>
+            <li class="nav-item">
+               <a class="nav-link btn btn-primary" href="{% url 'create-project'%}">Create Project</a>
+            </li>
+         </ul>
+      </div>
+      <a class="btn btn-primary" href="{% url 'logout' %}" role="button">Logout</a>
+      {% else %}
+      <a class="btn btn-primary" href="{% url 'register' %}" role="button">Sign Up</a>
+      <a class="btn btn-primary" href="{% url 'login' %}" role="button">Login</a>
+      {% endif%}
+   </div>
+   </div>
+   </div>
+</nav>

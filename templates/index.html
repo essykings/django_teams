@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Work</title>
+   </head>
+   <body>
+      <h1>Getting started with django</h1>
+      <h2>This is the root template</h2>
+
+      {% for project in projects%}
+      <p>{{project.id}}</p>
+      <p> {{project.title}}</p>
+      {% endfor%}
+   </body>
+</html>
